@@ -1,0 +1,20 @@
+{
+  "name": "11.-adding-html-files",
+  "version": "1.0.0",
+  "description": "add html files in express",
+  "license": "ISC",
+  "author": "ajmal hussain",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
