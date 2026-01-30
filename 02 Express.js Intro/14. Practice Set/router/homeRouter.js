@@ -7,10 +7,10 @@ const express = require('express');
 // Local Module
 const rootDir = require('../utils/pathUtil');
 
-const userRouter = express.Router();
+const homeRouter = express.Router();
 
-userRouter.get("/", (req, res, next) => {
+homeRouter.get("/", (req, res, next) => {
   res.sendFile(path.join(rootDir, 'views', 'home.html'));
 });
 
-module.exports = userRouter;
+module.exports = homeRouter;
