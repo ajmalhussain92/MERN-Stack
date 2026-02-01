@@ -15,7 +15,12 @@ const app = express();
 
 app.use(express.urlencoded());
 
-// Sequence matters
+// Sequence matters -- These are middlewares
+app.use((req, res, next) => {             // This middleware logs every request made by the browser
+  console.log(req.url, req.method);
+  next();
+});
+
 app.use(homeRouter);
 app.use(contactRouter);
 
@@ -26,6 +31,7 @@ app.use((req, res, next) => {     // 404 Handler
 
 // Starts the server
 const PORT = 3000;
-app.listen(PORT, () => {
+
+app.listen(PORT, (req, res) => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
