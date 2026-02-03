@@ -167,9 +167,6 @@
   }
 }
 @layer utilities {
-  .flex {
-    display: flex;
-  }
   .table {
     display: table;
   }
@@ -183,15 +180,15 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
-  }
-  .text-amber-500 {
-    color: var(--color-amber-500);
   }
   .text-blue-500 {
     color: var(--color-blue-500);
