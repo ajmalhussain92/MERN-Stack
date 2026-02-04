@@ -7,7 +7,8 @@ const bodyParser = require('body-parser');
 
 // Local Modules
 const homeRouter = require("./router/userRouter");
-const serviceRouter = require("./router/serviceRouter");
+const {serviceRouter} = require("./router/serviceRouter");    // Importing multiple exports
+const rootDir = require('./utils/pathUtil');
 
 // Express App Initialization
 const app = express();
@@ -25,8 +26,8 @@ app.use(express.static(path.join(__dirname, './public'))); // Serving Static Fil
 
 app.use(homeRouter);
 app.use(serviceRouter);
-app.use((req, res, next) => {
-  res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+app.use((req, res, next) => {     // 404 Handler
+  res.status(404).sendFile(path.join(rootDir, 'views', '404.html'));
 });
 
 const PORT = 5000;
